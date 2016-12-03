@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>CS Alumni</title>
+</head>
+<body>
+   <nav>
+   <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Bulletin Board</a></li>
+      <li><a href="#">Make a post</a></li>
+      <li><a href="#">Register/Profile</a></li>
+      <li><a href="#">Login/Logout</a></li>
+   </ul>
+   </nav>
+   <div class="step1">
+      Check if they are in the database.
+      <form class="confirm" action="register.php" method="post">
+         <p>First Name:</p><input type="text" name="FirstName" value="">
+         <p>Last Name:</p><input type="text" name="LastName" value="">
+         <p>Graduation Year: </p>
+         <select class="gradYear" name="AcademicYear">
+            <option value="1995-96">1995-96</option>
+            <option value="1996-97">1996-97</option>
+            <option value="1997-98">1997-98</option>
+            <option value="1998-99">1998-99</option>
+            <option value="1999-00">1999-00</option>
+            <option value="2000-01">2000-01</option>
+            <option value="2001-02">2001-02</option>
+            <option value="2002-03">2002-03</option>
+            <option value="2003-04">2003-04</option>
+            <option value="2004-05">2004-05</option>
+            <option value="2005-06">2005-06</option>
+            <option value="2006-07">2006-07</option>
+            <option value="2007-08">2007-08</option>
+            <option value="2008-09">2008-09</option>
+            <option value="2009-10">2009-10</option>
+            <option value="2010-11">2010-11</option>
+            <option value="2011-12">2011-12</option>
+            <option value="2012-13">2012-13</option>
+            <option value="2013-14">2013-14</option>
+            <option value="2014-15">2014-15</option>
+         </select>
+         <p>Level: </p>
+         <select class="level" name="LevelCode">
+            <option value="UG">UG</option>
+            <option value="GR">GR</option>
+            <option value="DR">DR</option>
+         </select>
+         
+         <input type="submit" name="submit" value="Submit">
+      </form>
+   </div>
+   <div class="step2">
+      Choose a username and password.
+      <form class="username" action="register.php" method="post">
+         <p>Username: </p>
+         <input type="text" name="username" value="">
+         <p>Password: </p>
+         <input type="text" name="password" value="">
+         <p>Confrim password</p>
+         <input type="text" name="confrim" value="">
+         <input type="submit" name="submit" value="Submit">
+      </form>
+   </div>
+   <div class="step3">
+      Enter additional profile information. Then redirect to their profile page.
+      <form class="profile" action="register.php" method="post">
+         <p>City: </p>
+         <input type="text" name="city" value="">
+         <p>State: </p>
+         <input type="text" name="state" value="">
+         <p>Country: </p>
+         <input type="text" name="country" value="">
+         <p>E-mail: </p>
+         <input type="text" name="email" value="">
+         <p>Phone number: </p>
+         <input type="text" name="Phone" value="">
+         <textarea name="bio" rows="8" cols="40"></textarea>
+      </form>
+   </div>
+</body>
+</html>
