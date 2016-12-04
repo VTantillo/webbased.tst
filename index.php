@@ -75,13 +75,13 @@ if(!$registered) die ($conn->error);
          $row = $result->fetch_array(MYSQLI_ASSOC);
          echo '<div class="entry">
          <ul>';
-         echo '<li>' . $row['id'] . '<li>';
-         echo '<li>' . $row['AcademicYear'] . '<li>';
-         echo '<li>' . $row['FirstName'] . '<li>';
-         echo '<li>' . $row['LastName'] . '<li>';
-         echo '<li>' . $row['Major'] . '<li>';
-         echo '<li>' . $row['LevelCode'] . '<li>';
-         echo '<li>' . $row['Degree'] . '<li>';
+         echo '<li>' . $row['id'] . '</li>';
+         echo '<li>' . $row['AcademicYear'] . '</li>';
+         echo '<li>' . $row['FirstName'] . '</li>';
+         echo '<li>' . $row['LastName'] . '</li>';
+         echo '<li>' . $row['Major'] . '</li>';
+         echo '<li>' . $row['LevelCode'] . '</li>';
+         echo '<li>' . $row['Degree'] . '</li>';
          if ($row['id'] == $nextUser['id']) {
             echo '<li><a href="/profile.php?id=' . $row['id'] . '">View Profile</a></li>';
             $next++;
