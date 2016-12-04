@@ -11,9 +11,10 @@
 - [x] Show the user's info in the banner when they are logged in.
 - [x] Make the home page, this page will have the list of graduates that can be filtered.
 - [ ] Show list of degrees, make it filterable and searchable
-- [ ] Add a button on the entires of students who have registered a profile.
+- [x] Add a button on the entires of students who have registered a profile.
 - [ ] Create the users profiles.
-- [ ] Allow the users to edit their profile and choose what can be seen by the public.
+- [x] Allow the users to edit their profile.
+- [ ] Allow the users to choose what is displayed on their public profile.
 - [ ] Show the messages users have posted in their edit profile page and all them to modify or delete them.
 - [x] Make the bulletin board.
 - [x] Make page to post to the bulletin board.
@@ -63,7 +64,9 @@ Graduates that register of the site fill out additional information that will be
   - Country
 
 - Phone number
+
 - A short bio about what they are up to now.
+
 - If there is time add the functionality for them to add a profile picture.
 - On the profile page the users will be able to view the posts they have made create new posts and edit or delete their previous posts to the bulletin board.
 

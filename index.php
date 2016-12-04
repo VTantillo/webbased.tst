@@ -14,6 +14,11 @@ $list = 'SELECT * FROM csdegree';
 $result = $conn->query($list);
 if(!$result) die ($conn->error);
 
+$query = "SELECT id FROM user ORDER BY id";
+
+$registered = $conn->query($query);
+if(!$registered) die ($conn->error);
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,23 +65,34 @@ if(!$result) die ($conn->error);
       </ul>
       </div>
       <?php
+      $next = 0;
       $rows = $result->num_rows;
+      $registered->data_seek($next);
+      $nextUser = $registered->fetch_array(MYSQLI_ASSOC);
+
       for($i = 0; $i < $rows; $i++) {
          $result->data_seek($i);
          $row = $result->fetch_array(MYSQLI_ASSOC);
          echo '<div class="entry">
-        <ul>';
-        echo '<li>' . $row['id'] . '<li>';
-        echo '<li>' . $row['AcademicYear'] . '<li>';
-        echo '<li>' . $row['FirstName'] . '<li>';
-        echo '<li>' . $row['LastName'] . '<li>';
-        echo '<li>' . $row['Major'] . '<li>';
-        echo '<li>' . $row['LevelCode'] . '<li>';
-        echo '<li>' . $row['Degree'] . '<li>';
-        echo "</ul>
-       </div> \n";
+         <ul>';
+         echo '<li>' . $row['id'] . '<li>';
+         echo '<li>' . $row['AcademicYear'] . '<li>';
+         echo '<li>' . $row['FirstName'] . '<li>';
+         echo '<li>' . $row['LastName'] . '<li>';
+         echo '<li>' . $row['Major'] . '<li>';
+         echo '<li>' . $row['LevelCode'] . '<li>';
+         echo '<li>' . $row['Degree'] . '<li>';
+         if ($row['id'] == $nextUser['id']) {
+            echo '<li><a href="/profile.php?id=' . $row['id'] . '">View Profile</a></li>';
+            $next++;
+            $registered->data_seek($next);
+            $nextUser = $registered->fetch_array(MYSQLI_ASSOC);
+         }
+         echo "</ul>
+         </div> \n";
       }
        ?>
    </div>
+
 </body>
 </html>
