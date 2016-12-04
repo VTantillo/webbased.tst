@@ -5,6 +5,7 @@ if (!isset($_SESSION['logged'])) {
 }
 
 require_once 'php/banner.php';
+
 require_once 'php/login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die ($conn->connect_error);
