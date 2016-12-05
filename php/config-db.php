@@ -18,7 +18,7 @@ $createDegrees = 'CREATE TABLE csdegree(
 $createUsers = 'CREATE TABLE user(
    id int(11) PRIMARY KEY,
    username VARCHAR(32) UNIQUE,
-   password CHAR(30),
+   password CHAR(32),
    FOREIGN KEY(id) REFERENCES csdegree(id)
 ) Engine = InnoDB';
 
@@ -37,11 +37,17 @@ $createPosts = 'CREATE TABLE post(
 $createProfiles = 'CREATE TABLE profile(
    userId INT(11) PRIMARY KEY,
    email VARCHAR(50),
+   pubEmail VARCHAR(7),
    phone VARCHAR(13),
+   pubPhone VARCHAR(7),
    city VARCHAR(50),
-   state CHAR(2),
+   pubCity VARCHAR(7),
+   state VARCHAR(30),
+   pubState VARCHAR(7),
    country VARCHAR(20),
+   pubCountry VARCHAR(7),
    bio VARCHAR(300),
+   pubBio VARCHAR(7),
    FOREIGN KEY (userId) REFERENCES user(id)
 ) Engine = InnoDB';
 

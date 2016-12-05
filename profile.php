@@ -36,28 +36,55 @@ if (isset($_GET['id'])) {
    // If they have insert the information into the table
    if ($num_rows == 1) {
       $email = $row['email'];
+      $pubEmail = $row['pubEmail'];
       $phone = $row['phone'];
+      $pubPhone = $row['pubPhone'];
       $city = $row['city'];
+      $pubCity = $row['pubCity'];
       $state = $row['state'];
+      $pubState = $row['pubState'];
       $country = $row['country'];
+      $pubCountry = $row['pubCountry'];
       $bio = $row['bio'];
+      $pubBio = $row['pubBio'];
 
    // If they dont have an account don't put empty strings;
    } elseif ($num_rows == 0) {
       $email = '';
+      $pubEmail = '';
       $phone = '';
+      $pubPhone = '';
       $city = '';
+      $pubCity = '';
       $state = '';
+      $pubState = '';
       $country = '';
+      $pubCountry = '';
       $bio = '';
+      $pubBio = '';
    }
 
-   $profileInfo = '<li><p>E-mail: ' . $email . '</p></li>'
-   . '<li><p>Phone: ' . $phone . '</p></li>'
-   . '<li><p>City: ' . $city . '</p></li>'
-   . '<li><p>State: ' . $state . '</p></li>'
-   . '<li><p>Country: ' . $country . '</p></li>'
-   . '<li><p>Bio: ' . $bio . '</p></li>' ;
+   $profileInfo = '';
+
+   if ($pubEmail == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>E-mail: ' . $email . '</p></li>';
+   }
+   if ($pubPhone == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>Phone: ' . $phone . '</p></li>';
+   }
+   if ($pubCity == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>City: ' . $city . '</p></li>';
+   }
+   if ($pubState == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>State: ' . $state . '</p></li>';
+   }
+   if ($pubContry == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>Country: ' . $country . '</p></li>';
+   }
+   if ($pubBio == 'checked') {
+      $profileInfo = $profileInfo . '<li><p>Bio: ' . $bio . '</p></li>';
+   }
+
 
 
 } else {

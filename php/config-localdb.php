@@ -38,11 +38,17 @@ $createPosts = 'CREATE TABLE post(
 $createProfiles = 'CREATE TABLE profile(
    userId INT(11) PRIMARY KEY,
    email VARCHAR(50),
+   pubEmail VARCHAR(7),
    phone VARCHAR(13),
+   pubPhone VARCHAR(7),
    city VARCHAR(50),
-   state CHAR(2),
+   pubCity VARCHAR(7),
+   state VARCHAR(30),
+   pubState VARCHAR(7),
    country VARCHAR(20),
+   pubCountry VARCHAR(7),
    bio VARCHAR(300),
+   pubBio VARCHAR(7),
    FOREIGN KEY (userId) REFERENCES user(id)
 ) Engine = InnoDB';
 
@@ -82,8 +88,8 @@ if (!$create) die ($conn->error);
 $create = $conn->query($createProfiles);
 if (!$create) die ($conn->error);
 
-$insert = $conn->query($copyDegrees);
-if (!$insert) die ($conn->error);
+// $insert = $conn->query($copyDegrees);
+// if (!$insert) die ($conn->error);
 
 // $rows = $table->num_rows;
 // for ($i = 0; $i < $rows; $i++) {
