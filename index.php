@@ -26,6 +26,7 @@ if(!$registered) die ($conn->error);
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="/css/index.css">
    <title>CS Alumni</title>
 </head>
 <body>
@@ -62,6 +63,7 @@ if(!$registered) die ($conn->error);
          <li>Major</li>
          <li>Level code</li>
          <li>Degree</li>
+         <li>Profile</li>
       </ul>
       </div>
       <?php
@@ -87,6 +89,8 @@ if(!$registered) die ($conn->error);
             $next++;
             $registered->data_seek($next);
             $nextUser = $registered->fetch_array(MYSQLI_ASSOC);
+         } else {
+            echo '<li>  </li>';
          }
          echo "</ul>
          </div> \n";

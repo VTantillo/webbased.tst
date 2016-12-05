@@ -1,0 +1,31 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.list ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    flex: none;
+    padding: 0;
+}
+
+.list li {
+    flex: 1;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.headers, .entry {
+    width: 100%;
+}
+
+
+/*.headers ul li, .entry ul li {
+    flex: auto;
+    box-sizing: border-box;
+    margin: auto;
+}*/
