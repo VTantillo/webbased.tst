@@ -67,7 +67,6 @@ if ($_SESSION['registration'] == 1) {
          <input type="submit" name="submit" value="Submit">
       </form>
    </div>';
-   $_SESSION['registration'] = 2;
 }
 
 if (isset($_POST['FirstName']) && isset($_POST['LastName']) && isset($_POST['AcademicYear'])) {
